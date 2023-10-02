@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
+        
         <header>
             <a href='admin.php'><img src="resoc.jpg" alt="Logo de notre réseau social"/></a>
             <nav id="menu">
@@ -30,7 +31,7 @@
                 <section>
                     <h3>Présentation</h3>
                     <p>Sur cette page vous trouverez les derniers messages de
-                        tous les utilisatrices du site.</p>
+                        toutes les utilisatrices du site.</p>
                 </section>
             </aside>
             <main>
@@ -40,7 +41,7 @@
                     <h3>
                         <time datetime='2020-02-01 11:12:13' >31 février 2010 à 11h12</time>
                     </h3>
-                    <address>par AreTirer</address>
+                    <address>par a retirer</address>
                     <div>
                         <p>Ceci est un paragraphe</p>
                         <p>Ceci est un autre paragraphe</p>
