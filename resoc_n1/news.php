@@ -37,24 +37,6 @@
             <main>
                 <!-- L'article qui suit est un exemple pour la présentation et 
                   @todo: doit etre retiré -->
-                <article>
-                    <h3>
-                        <time datetime='2020-02-01 11:12:13' >31 février 2010 à 11h12</time>
-                    </h3>
-                    <address>par a retirer</address>
-                    <div>
-                        <p>Ceci est un paragraphe</p>
-                        <p>Ceci est un autre paragraphe</p>
-                        <p>... de toutes manières il faut supprimer cet 
-                            article et le remplacer par des informations en 
-                            provenance de la base de donnée (voir ci-dessous)</p>
-                    </div>                                            
-                    <footer>
-                        <small>♥1012 </small>
-                        <a href="">#lorem</a>,
-                        <a href="">#piscitur</a>,
-                    </footer>
-                </article>               
 
                 <?php
                 /*
@@ -67,6 +49,9 @@
                  */
 
                 // Etape 1: Ouvrir une connexion avec la base de donnée.
+
+                // $result = $mysqli->query("SELECT * FROM `posts`", MYSQLI_USE_RESULT);
+
                 include '../N1/connexions2.php';
                 //verification
                 if ($mysqli->connect_errno)
@@ -124,13 +109,13 @@
                         <h3>
                             <time><?php echo $post['created'] ?></time>
                         </h3>
-                        <address>AREMPLACER</address>
+                        <address><?php echo $post['taglist'] ?></address>
                         <div>
-                            <p>AREMPLACER</p>
+                            <p><?php echo $post['content'] ?></p>
                         </div>
                         <footer>
-                            <small>♥ AREMPLACER </small>
-                            <a href="">AREMPLACER</a>,
+                            <small>♥ <?php echo $post['like_number'] ?> </small>
+                            <a href=""><?php echo $post['author_name'] ?></a>,
                         </footer>
                     </article>
                     <?php
