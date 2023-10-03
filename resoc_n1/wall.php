@@ -23,7 +23,7 @@
             /**
              * Etape 2: se connecter à la base de donnée
              */
-            // mettre un include
+            include 'N1\connexions2.php'
             //?>
 
             <aside>
