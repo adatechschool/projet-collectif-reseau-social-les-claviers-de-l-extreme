@@ -24,7 +24,7 @@
             /**
              * Etape 2: se connecter à la base de donnée
              */
-            include 'N1\connexions2.php'
+            $mysqli = new mysqli("localhost", "root", "root", "socialnetwork");
             ?>
 
             <aside>
@@ -80,7 +80,7 @@
                  * A vous de retrouver comment faire la boucle while de parcours...
                  */
                 ?>                
-                <!-- Faire include -->
+                <?php include '../N1/article.php'?>
                 <?php
                 // et de pas oublier de fermer ici vote while
                 ?>

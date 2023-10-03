@@ -67,7 +67,7 @@
                  */
 
                 // Etape 1: Ouvrir une connexion avec la base de donnée.
-                include 'N1\connexions2.php';
+                include '../N1/connexions2.php';
                 //verification
                 if ($mysqli->connect_errno)
                 {

@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
-        
+    <?php include '../N1/article.php'?>
         <div id="wrapper">
             <?php
             /**
@@ -23,8 +23,8 @@
             /**
              * Etape 2: se connecter à la base de donnée
              */
-            include 'N1\connexions2.php'
-            //?>
+            $mysqli = new mysqli("localhost", "root", "root", "socialnetwork");
+            ?>
 
             <aside>
                 <?php
@@ -76,7 +76,7 @@
 
                     echo "<pre>" . print_r($post, 1) . "</pre>";
                     ?>                
-                    <!-- Faire include -->
+                    <?php include '../N1/article.php'?>
                 <?php } ?>
 
 

@@ -1,3 +1,5 @@
+<!doctype html>
+<html lang="fr">
 <header>
     <img src="resoc.jpg" alt="Logo de notre réseau social"/>
     <nav id="menu">
