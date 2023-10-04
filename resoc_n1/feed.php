@@ -24,7 +24,7 @@
             /**
              * Etape 2: se connecter à la base de donnée
              */
-            $mysqli = new mysqli("localhost", "root", "root", "socialnetwork");
+            include '../N1/connexions2.php';
             ?>
 
             <aside>
@@ -36,16 +36,12 @@
                 $lesInformations = $mysqli->query($laQuestionEnSql);
                 $user = $lesInformations->fetch_assoc();
                 //@todo: afficher le résultat de la ligne ci dessous, remplacer XXX par l'alias et effacer la ligne ci-dessous
-                echo "<pre>" . print_r($user, 1) . "</pre>";
+                
                 ?>
                 <img src="user.jpg" alt="Portrait de l'utilisatrice"/>
                 <section>
                     <h3>Présentation</h3>
-                    <p>Sur cette page vous trouverez tous les message des utilisatrices
-                        auxquel est abonnée l'utilisatrice XXX
-                        (n° <?php echo $userId ?>)
-                    </p>
-
+                    <p>Sur cette page, vous trouverez tous les messages de l'utilisatrice : <?php echo($user['alias']) ?></p>
                 </section>
             </aside>
             <main>
@@ -79,11 +75,15 @@
                  * Etape 4: @todo Parcourir les messsages et remplir correctement le HTML avec les bonnes valeurs php
                  * A vous de retrouver comment faire la boucle while de parcours...
                  */
-                ?>                
-                <?php include '../N1/article.php'?>
-                <?php
-                // et de pas oublier de fermer ici vote while
-                ?>
+                                
+                while ($post = $lesInformations->fetch_assoc())
+                {
+
+                    // echo "<pre>" . print_r($post, 1) . "</pre>";
+                    ?> 
+                                  
+                    <?php include '../N1/article.php'?>
+                <?php } ?>
 
 
             </main>

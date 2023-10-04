@@ -40,7 +40,7 @@
                 <img src="user.jpg" alt="Portrait de l'utilisatrice"/>
                 <section>
                     <h3>Présentation</h3>
-                    <p>Sur cette page vous trouverez tous les message de l'utilisatrice : n°<?php echo($user['id']) ?></p>
+                    <p>Sur cette page, vous trouverez tous les messages de l'utilisatrice : n°<?php echo($user['id']) ?></p>
                 </section>
             </aside>
             <main>
