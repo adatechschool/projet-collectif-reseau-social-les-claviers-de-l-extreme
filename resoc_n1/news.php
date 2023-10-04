@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
-        
+    <?php include '../N1/navbar.php'?>
         <header>
             <a href='admin.php'><img src="resoc.jpg" alt="Logo de notre réseau social"/></a>
             <nav id="menu">

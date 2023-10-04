@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
-    
+    <?php include '../N1/navbar.php'?>
         <div id="wrapper" class='profile'>
 
 

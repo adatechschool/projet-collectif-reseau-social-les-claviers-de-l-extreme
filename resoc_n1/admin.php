@@ -8,7 +8,7 @@
     </head>
     <body>
         
-    <?php include '../N1/connexions1.php'?>
+    <?php include '../N1/navbar.php'?>
 
         <div id="wrapper" class='admin'>
             <aside>
