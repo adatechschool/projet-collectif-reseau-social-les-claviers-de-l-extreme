@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
-    <?php include '../N1/article.php'?>
+    <?php include '../N1/navbar.php'?>
         <div id="wrapper">
             <?php
             /**
@@ -23,7 +23,7 @@
             /**
              * Etape 2: se connecter à la base de donnée
              */
-            $mysqli = new mysqli("localhost", "root", "root", "socialnetwork");
+            include '../N1/connexions2.php';
             ?>
 
             <aside>
@@ -35,14 +35,12 @@
                 $lesInformations = $mysqli->query($laQuestionEnSql);
                 $user = $lesInformations->fetch_assoc();
                 //@todo: afficher le résultat de la ligne ci dessous, remplacer XXX par l'alias et effacer la ligne ci-dessous
-                echo "<pre>" . print_r($user, 1) . "</pre>";
+                
                 ?>
                 <img src="user.jpg" alt="Portrait de l'utilisatrice"/>
                 <section>
                     <h3>Présentation</h3>
-                    <p>Sur cette page vous trouverez tous les message de l'utilisatrice : XXX
-                        (n° <?php echo $userId ?>)
-                    </p>
+                    <p>Sur cette page vous trouverez tous les message de l'utilisatrice : n°<?php echo($user['id']) ?></p>
                 </section>
             </aside>
             <main>
@@ -77,8 +75,9 @@
                 while ($post = $lesInformations->fetch_assoc())
                 {
 
-                    echo "<pre>" . print_r($post, 1) . "</pre>";
-                    ?>                
+                    // echo "<pre>" . print_r($post, 1) . "</pre>";
+                    ?> 
+                                  
                     <?php include '../N1/article.php'?>
                 <?php } ?>
 
