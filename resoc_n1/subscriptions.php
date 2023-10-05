@@ -1,3 +1,12 @@
+<?php
+    //On démarre une nouvelle session
+    session_start();
+    
+    //On définit des variables de session
+    $_SESSION['alias'];
+    $_SESSION['password'];
+?>
+
 <!doctype html>
 <html lang="fr">
     <head>
