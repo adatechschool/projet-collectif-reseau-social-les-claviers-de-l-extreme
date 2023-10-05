@@ -10,39 +10,14 @@ session_start();
         <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
-<<<<<<< HEAD
 
     <?php include '../N1/navbar.php' ?>
-=======
-        <header>
-            <img src="resoc.jpg" alt="Logo de notre réseau social"/>
-            <nav id="menu">
-                <a href="news.php">Actualités</a>
-                <a href="wall.php?user_id=5">Mur</a>
-                <a href="feed.php?user_id=5">Flux</a>
-                <a href="tags.php?tag_id=1">Mots-clés</a>
-            </nav>
-            <nav id="user">
-                <a href="#">Profil</a>
-                <ul>
-                    <li><a href="settings.php?user_id=5">Paramètres</a></li>
-                    <li><a href="followers.php?user_id=5">Mes suiveurs</a></li>
-                    <li><a href="subscriptions.php?user_id=5">Mes abonnements</a></li>
-                </ul>
-
-            </nav>
-        </header>
->>>>>>> ce565a8 (Authorisations)
 
         <div id="wrapper" >
 
             <aside>
                 <h2>Présentation</h2>
-<<<<<<< HEAD
                 <p>Bienvenue sur notre réseau social.</p>
-=======
-                <p>Bienvenu sur notre réseau social.</p>
->>>>>>> ce565a8 (Authorisations)
             </aside>
             <main>
                 <article>
