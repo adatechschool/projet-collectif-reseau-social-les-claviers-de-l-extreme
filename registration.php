@@ -8,8 +8,6 @@
     </head>
     <body>
 
-    <?php include '../N1/navbar.php' ?>
-
         <div id="wrapper" >
 
             <aside>
@@ -31,7 +29,7 @@
                         // on ne fait ce qui suit que si un formulaire a été soumis.
                         // Etape 2: récupérer ce qu'il y a dans le formulaire @todo: c'est là que votre travaille se situe
                         // observez le résultat de cette ligne de débug (vous l'effacerez ensuite)
-                        echo "<pre>" . print_r($_POST, 1) . "</pre>";
+                        //echo "<pre>" . print_r($_POST, 1) . "</pre>";
                         // et complétez le code ci dessous en remplaçant les ???
                         $new_email = $_POST['email'];
                         $new_alias = $_POST['pseudo'];
@@ -48,7 +46,7 @@
                         $new_alias = $mysqli->real_escape_string($new_alias);
                         $new_passwd = $mysqli->real_escape_string($new_passwd);
                         // on crypte le mot de passe pour éviter d'exposer notre utilisatrice en cas d'intrusion dans nos systèmes
-                        $new_passwd = md5($new_passwd);
+                        $passwordToCheck = hash('sha256', $passwordToCheck);
                         // NB: md5 est pédagogique mais n'est pas recommandée pour une vraies sécurité
                         //Etape 5 : construction de la requete
                         $lInstructionSql = "INSERT INTO users (id, email, password, alias) "
