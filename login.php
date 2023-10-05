@@ -46,8 +46,7 @@ session_start();
                         $emailAVerifier = $mysqli->real_escape_string($emailAVerifier);
                         $passwdAVerifier = $mysqli->real_escape_string($passwdAVerifier);
                         // on crypte le mot de passe pour éviter d'exposer notre utilisatrice en cas d'intrusion dans nos systèmes
-                        $passwordToCheck = hash('sha256', $passwordToCheck);
-                        // NB: md5 est pédagogique mais n'est pas recommandée pour une vraies sécurité
+                        $passwordToCheck = hash('sha256', $passwdAVerifier);
                         //Etape 5 : construction de la requete
                         $lInstructionSql = "SELECT * "
                                 . "FROM users "
