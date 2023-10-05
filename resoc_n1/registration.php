@@ -1,3 +1,7 @@
+<?php 
+    include '../N1/connexions1.php';
+?>
+
 <!doctype html>
 <html lang="fr">
     <head>
