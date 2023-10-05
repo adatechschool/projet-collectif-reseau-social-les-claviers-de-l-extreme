@@ -13,35 +13,19 @@
         <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
-        <header>
-            <img src="resoc.jpg" alt="Logo de notre réseau social"/>
-            <nav id="menu">
-                <a href="news.php">Actualités</a>
-                <a href="wall.php?user_id=5">Mur</a>
-                <a href="feed.php?user_id=5">Flux</a>
-                <a href="tags.php?tag_id=1">Mots-clés</a>
-            </nav>
-            <nav id="user">
-                <a href="#">Profil</a>
-                <ul>
-                    <li><a href="settings.php?user_id=5">Paramètres</a></li>
-                    <li><a href="followers.php?user_id=5">Mes suiveurs</a></li>
-                    <li><a href="subscriptions.php?user_id=5">Mes abonnements</a></li>
-                </ul>
 
-            </nav>
-        </header>
+    <?php include '../N1/navbar.php' ?>
 
         <div id="wrapper" >
 
             <aside>
                 <h2>Présentation</h2>
-                <p>Sur cette page on peut poster un message en se faisant 
-                    passer pour quelqu'un d'autre</p>
+                <p>Sur cette page, on peut poster un message en se faisant 
+                    passer pour quelqu'un d'autre !</p>
             </aside>
             <main>
                 <article>
-                    <h2>Poster un message</h2>
+                    <h2>Poster un message.</h2>
                     <?php
                     /**
                      * BD
