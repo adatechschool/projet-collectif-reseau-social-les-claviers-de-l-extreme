@@ -40,7 +40,34 @@
                 <img src="user.jpg" alt="Portrait de l'utilisatrice"/>
                 <section>
                     <h3>Présentation</h3>
-                    <p>Sur cette page, vous trouverez tous les messages de l'utilisatrice : n°<?php echo($user['id']) ?></p>
+                    <p>Sur cette page, vous trouverez tous les messages de l'utilisatrice : <?php echo($user['alias']) ?></p>
+
+                <section>
+                    <h3>Poster un message</h3>
+                    <form method="post" action="">
+                        <label for="message">Message :</label>
+                        <textarea name="message" id="message"></textarea>
+                        <br>
+                        <input type="submit" name="submit" value="Publier">
+                    </form>
+                </section>
+
+                <?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    $message = $_POST['message'];
+                    $authorId = $_POST['user_id'];
+                    
+                    $insertBdd = "INSERT INTO posts (id, user_id, content, created) VALUES (NULL, '$userId', '$message', NOW())";
+                    $okInsert = $mysqli->query($insertBdd);
+
+                    if ($okInsert) {
+                    echo "Message posté avec succès.";
+                    } else {
+                    echo "Erreur lors de la publication du message : " . $mysqli->error;
+                    }
+                }
+                ?>
+
+                    
                 </section>
             </aside>
             <main>
