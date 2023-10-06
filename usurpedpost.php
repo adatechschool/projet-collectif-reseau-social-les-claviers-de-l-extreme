@@ -2,7 +2,7 @@
     session_start();
 ?>
 <?php
-    include '../N1/connexions2.php';
+    include 'connexions2.php';
 ?>
 <!doctype html>
 <html lang="fr">
@@ -14,7 +14,7 @@
     </head>
     <body>
 
-    <?php include '../N1/navbar.php' ?>
+    <?php include 'navbar.php' ?>
 
         <div id="wrapper" >
 

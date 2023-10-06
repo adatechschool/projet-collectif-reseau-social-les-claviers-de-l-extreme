@@ -51,7 +51,7 @@
 
                 // $result = $mysqli->query("SELECT * FROM `posts`", MYSQLI_USE_RESULT);
 
-                include '../N1/connexions2.php';
+                include 'connexions2.php';
                 //verification
                 if ($mysqli->connect_errno)
                 {

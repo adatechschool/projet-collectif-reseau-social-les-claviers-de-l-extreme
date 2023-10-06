@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
-    <?php include '../N1/navbar.php'?>
+    <?php include 'navbar.php'?>
         <div id="wrapper" class='profile'>
 
 
@@ -42,7 +42,7 @@
                 /**
                  * Etape 2: se connecter à la base de donnée
                  */
-                include '../N1/connexions2.php';
+                include 'connexions2.php';
                 /**
                  * Etape 3: récupérer le nom de l'utilisateur
                  */

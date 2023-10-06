@@ -30,7 +30,6 @@ CREATE TABLE IF NOT EXISTS `socialnetwork`.`users` (
   UNIQUE INDEX `alias_UNIQUE` (`alias` ASC))
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
 -- Table `socialnetwork`.`posts`
 -- -----------------------------------------------------

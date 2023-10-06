@@ -40,13 +40,13 @@ session_start();
 
 
                         //Etape 3 : Ouvrir une connexion avec la base de donnée.
-                        include '../N1/connexions2.php';
+                        include 'connexions2.php';
                         //Etape 4 : Petite sécurité
                         // pour éviter les injection sql : https://www.w3schools.com/sql/sql_injection.asp
                         $emailAVerifier = $mysqli->real_escape_string($emailAVerifier);
                         $passwdAVerifier = $mysqli->real_escape_string($passwdAVerifier);
                         // on crypte le mot de passe pour éviter d'exposer notre utilisatrice en cas d'intrusion dans nos systèmes
-                        $passwordToCheck = hash('sha256', $passwdAVerifier);
+                        $passwdAVerifier = hash('sha256', $passwdAVerifier);
                         //Etape 5 : construction de la requete
                         $lInstructionSql = "SELECT * "
                                 . "FROM users "
