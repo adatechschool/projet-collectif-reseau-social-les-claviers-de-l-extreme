@@ -1,11 +1,14 @@
 <?php
     //On démarre une nouvelle session
     session_start();
+    //connexion à la BDD
+    include 'connexions2.php';
     
-    //On définit des variables de session
-    $_SESSION['alias'];
-    $_SESSION['password'];
+    if (isset($_SESSION['user_id'])) {
+        $connectedUserId = $_SESSION['user_id'];
+    }
 ?>
+
 <!doctype html>
 <html lang="fr">
     <head>
