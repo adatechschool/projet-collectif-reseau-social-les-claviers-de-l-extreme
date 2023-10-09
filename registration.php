@@ -60,9 +60,9 @@
                             echo "L'inscription a échouée : " . $mysqli->error;
                         } else
                         {
-                            echo "Votre inscription est un succès : " . $new_alias;
-                            echo " <a href='login.php'>Connectez-vous.</a>";
-                        }
+                            echo "Votre inscription est un succès : " . $new_alias;?>
+                            <a href='index.php'>Connectez-vous.</a>";
+                        <?php }
                     }
                     debug_to_console($enCoursDeTraitement);
                     ?>                     
@@ -70,11 +70,11 @@
                         <input type='hidden'name='???' value='achanger'>
                         <dl>
                             <dt><label for='pseudo'>Pseudo</label></dt>
-                            <dd><input type='text'name='pseudo'></dd>
+                            <dd><input type='text'name='alias'></dd>
                             <dt><label for='email'>E-Mail</label></dt>
                             <dd><input type='email'name='email'></dd>
                             <dt><label for='motpasse'>Mot de passe</label></dt>
-                            <dd><input type='password'name='motpasse'></dd>
+                            <dd><input type='password'name='password'></dd>
                         </dl>
                         <input type='submit'>
                     </form>
