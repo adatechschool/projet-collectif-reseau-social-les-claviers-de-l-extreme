@@ -1,42 +1,22 @@
 <?php
 session_start();
 ?>
-<?php
-    include '../N1/connexions2.php';
-?>
 <!doctype html>
 <html lang="fr">
     <head>
         <meta charset="utf-8">
         <title>ReSoC - Connexion</title> 
         <meta name="author" content="Julien Falconnet">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
-        <header>
-            <img src="resoc.jpg" alt="Logo de notre réseau social"/>
-            <nav id="menu">
-                <a href="news.php">Actualités</a>
-                <a href="wall.php?user_id=5">Mur</a>
-                <a href="feed.php?user_id=5">Flux</a>
-                <a href="tags.php?tag_id=1">Mots-clés</a>
-            </nav>
-            <nav id="user">
-                <a href="#">Profil</a>
-                <ul>
-                    <li><a href="settings.php?user_id=5">Paramètres</a></li>
-                    <li><a href="followers.php?user_id=5">Mes suiveurs</a></li>
-                    <li><a href="subscriptions.php?user_id=5">Mes abonnements</a></li>
-                </ul>
-
-            </nav>
-        </header>
-
         <div id="wrapper" >
 
             <aside>
                 <h2>Présentation</h2>
-                <p>Bienvenu sur notre réseau social.</p>
+                <p>Bienvenue sur notre réseau social.</p>
             </aside>
             <main>
                 <article>
@@ -60,14 +40,13 @@ session_start();
 
 
                         //Etape 3 : Ouvrir une connexion avec la base de donnée.
-                        // INCLUDE en début de fichier
+                        include 'connexions2.php';
                         //Etape 4 : Petite sécurité
                         // pour éviter les injection sql : https://www.w3schools.com/sql/sql_injection.asp
                         $emailAVerifier = $mysqli->real_escape_string($emailAVerifier);
                         $passwdAVerifier = $mysqli->real_escape_string($passwdAVerifier);
                         // on crypte le mot de passe pour éviter d'exposer notre utilisatrice en cas d'intrusion dans nos systèmes
-                        $passwdAVerifier = md5($passwdAVerifier);
-                        // NB: md5 est pédagogique mais n'est pas recommandée pour une vraies sécurité
+                        $passwdAVerifier = hash('sha256', $passwdAVerifier);
                         //Etape 5 : construction de la requete
                         $lInstructionSql = "SELECT * "
                                 . "FROM users "
@@ -87,9 +66,22 @@ session_start();
                             // Etape 7 : Se souvenir que l'utilisateur s'est connecté pour la suite
                             // documentation: https://www.php.net/manual/fr/session.examples.basic.php
                             $_SESSION['connected_id']=$user['id'];
-                        }
+                            ?>
+
+                <article>                    
+                    <h3>
+                        <nav><a href="wall.php?user_id=<?php echo $user['id'] ?>"><?php echo $user['alias'] ?> Retour vers ton mur !</a></nav>
+                    </h3>
+                    
+                    <p><?php echo $user['id'] ?></p>
+                    
+                </article>
+                <?php
+                        }                        
                     }
-                    ?>                     
+                    ?>
+                
+
                     <form action="login.php" method="post">
                         <input type='hidden'name='???' value='achanger'>
                         <dl>
