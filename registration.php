@@ -59,12 +59,13 @@
                         {
                             echo "L'inscription a échouée : " . $mysqli->error;
                         } else
-                        {
-                            echo "Votre inscription est un succès : " . $new_alias;?>
-                            <a href='index.php'>Connectez-vous.</a>";
-                        <?php }
+                        {   
+                            session_start();
+                            $_SESSION['alias'] = $new_alias;                      
+                            header('Location: registrationsuccess.php');
+                            exit;
+                         }
                     }
-                    debug_to_console($enCoursDeTraitement);
                     ?>                     
                     <form action="registration.php" method="post">
                         <input type='hidden'name='???' value='achanger'>
