@@ -8,8 +8,8 @@
     </head>
     <body>
         
-    <?php include '../N1/navbar.php'?>
-    <?php include '../N1/connexions1.php'?>
+    <?php include 'navbar.php'?>
+    <?php include 'connexions1.php'?>
 
         <div id="wrapper" class='admin'>
             <aside>

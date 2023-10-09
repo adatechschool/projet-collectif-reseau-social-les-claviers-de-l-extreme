@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
-    <?php include '../N1/navbar.php'?>
+    <?php include 'navbar.php'?>
         <div id="wrapper">
             <?php
             /**
@@ -33,7 +33,7 @@
             /**
              * Etape 2: se connecter à la base de donnée
              */
-            include '../N1/connexions2.php';
+            include 'connexions2.php';
             ?>
 
             <aside>
@@ -90,7 +90,7 @@
 
                     ?> 
                                   
-                    <?php include '../N1/article.php'?>
+                    <?php include 'article.php'?>
                 <?php } ?>
 
 
