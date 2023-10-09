@@ -1,9 +1,7 @@
 <?php
     session_start();
 ?>
-<?php
-    include 'connexions2.php';
-?>
+
 <!doctype html>
 <html lang="fr">
     <head>
@@ -27,13 +25,9 @@
                 <article>
                     <h2>Poster un message.</h2>
                     <?php
-                    /**
-                     * BD
-                     */
-                    // INCLUDE en début de fichier
-                    /**
-                     * Récupération de la liste des auteurs
-                     */
+                    
+                    include 'connexions2.php';
+                
                     $listAuteurs = [];
                     $laQuestionEnSql = "SELECT * FROM users";
                     $lesInformations = $mysqli->query($laQuestionEnSql);
@@ -65,15 +59,8 @@
                         $authorId = intval($mysqli->real_escape_string($authorId));
                         $postContent = $mysqli->real_escape_string($postContent);
                         //Etape 4 : construction de la requete
-                        $lInstructionSql = "INSERT INTO posts "
-                                . "(id, user_id, content, created, permalink, post_id) "
-                                . "VALUES (NULL, "
-                                . $authorId . ", "
-                                . "'" . $postContent . "', "
-                                . "NOW(), "
-                                . "'', "
-                                . "NULL);"
-                                ;
+                        $lInstructionSql = "INSERT INTO posts (user_id, content, created) VALUES ($authorId, '$postContent', NOW())";
+
                         echo $lInstructionSql;
                         // Etape 5 : execution
                         $ok = $mysqli->query($lInstructionSql);
@@ -82,7 +69,7 @@
                             echo "Impossible d'ajouter le message: " . $mysqli->error;
                         } else
                         {
-                            echo "Message posté en tant que :" . $listAuteurs[$authorId];
+                            echo "Message caché";
                         }
                     }
                     ?>                     
@@ -96,7 +83,7 @@
                                         echo "<option value='$id'>$alias</option>";
                                     ?>
                                 </select></dd>
-                            <dt><label for='message'>Message</label></dt>
+                            <dt><label for='message'>Message caché : </label></dt>
                             <dd><textarea name='message'></textarea></dd>
                         </dl>
                         <input type='submit'>
