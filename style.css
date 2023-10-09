@@ -1,5 +1,5 @@
 body{
-    background-color: #003;
+    background-color: white;
     font-family: Arial;
 }
 
@@ -7,7 +7,9 @@ a{text-decoration: none; color:black;}
 a:hover{text-decoration: underline;}
 
 body>header{
-    background-color: #fff;
+    background-color: #fdd8d0;
+    border: 5px solid #ffd737;
+    border-radius: 1em;
     display:flex;
     width:80em;
     margin:0 auto 2em auto;    
@@ -74,7 +76,8 @@ body>header #user:hover ul{
     margin:0 auto 2em auto;
 }
 #wrapper aside{
-    background-color: #fff;
+    background-color: #fcf3b2;
+    border: 5px solid #e74c34;
     flex:1;
     padding:1em;
     border-radius: 1em;    
@@ -92,7 +95,8 @@ body>header #user:hover ul{
     overflow-y:  scroll;
 }
 #wrapper main article{
-    background-color: #fff;
+    background-color: #fcf3b2;
+    border: 5px solid #1a5af5;
     padding:1em;
     margin-bottom: 1em ;
     border-radius: 1em;
