@@ -23,7 +23,9 @@
                     // Vérifier si le nom d'utilisateur est stocké dans la variable de session
                     if (isset($_SESSION['alias'])) {
                     $alias = $_SESSION['alias'];
-                    echo "$alias !";
+                    $chaineMajuscule = ucfirst($alias);
+                    
+                    echo "$chaineMajuscule !";
                     } else {
                     echo "Veuillez vous connecter.";
                     }
