@@ -1,32 +1,46 @@
 <?php
-session_start();
-$user_id = $_SESSION['user_id'];
-$post_id = $_POST['post_id'];
+// Vérifier si le formulaire a été soumis
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Récupérez les données du formulaire
+    $post_id = $_POST['post_id'];
+    $user_id = $_POST['user_id'];
+    $author_id = $_POST['author_id'];
+    $location = $_POST['location'];
+    // ne rien faire si l'utilisateur souhaite liker son propre post
+    if ($user_id === $author_id) {
+        header("Location:$location");
+        exit();
+    } else {
+        // se connecter à la bdd
+        include("connexions.php");
 
-include 'connexions2.php';
+        // vérifier que l'utilisateur n'a pas déjà liké ce post
+        $marequete = "SELECT * FROM likes WHERE user_id='$user_id' AND post_id='$post_id' ";
+        $reponse = $mysqli->query($marequete);
+        if (mysqli_num_rows($reponse) == 0) {
+            // requête SQL pour ajouter un like
+            $lInstructionSql = "INSERT INTO likes "
+                . "(id, user_id, post_id) "
+                . "VALUES (NULL, "
+                . $user_id . ", "
+                . $post_id . ")"
+            ;
+            $mysqli->query($lInstructionSql);
 
-// Vérifier si l'utilisateur a déjà aimé le message
-$stmt = $pdo->prepare('SELECT * FROM likes WHERE user_id = ? AND post_id = ?');
-$stmt->execute([$user_id, $post_id]);
-if ($stmt->rowCount() > 0) {
-    // L'utilisateur a déjà aimé le message
-    $modal = '<div class="modal"><div class="modal-content">Vous avez déjà aimé ce message.</div></div>';
-    // Ajouter l'élément div à la page
-    // echo $modal;
-    // exit;
-    header('Location: index.php');
-    exit;
+            header("Location:$location");
+            exit();
+        } 
+        else {
+             // requête SQL pour ajouter un like
+             $lInstructionSql = "DELETE FROM `likes` WHERE user_id='$user_id' AND post_id='$post_id' ";
+         ;
+         $mysqli->query($lInstructionSql);
+            header("Location:$location");
+            exit();
+            
+        }
+    }
 }
-// Ajouter un like pour le message
-$stmt = $pdo->prepare('INSERT INTO likes (user_id, post_id, created_at) VALUES ('.$user_id.', '.$post_id.', NOW())');
-$stmt->execute([$user_id, $post_id]);
 
-// Compter le nombre de likes pour le message
-$stmt = $pdo->prepare('SELECT COUNT(*) FROM likes WHERE post_id = ?');
-$stmt->execute([$post['id']]);
-$like_count = $stmt->fetchColumn();
 
-// Rediriger l'utilisateur vers la page d'accueil
-header('Location: index.php');
-exit;
 ?>
