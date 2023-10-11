@@ -1,3 +1,11 @@
+<?php
+    //On démarre une nouvelle session
+    session_start();
+
+    // Connexions à la base de données et à l'id de l'utilisateur
+    include 'connexions.php'
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -24,8 +32,6 @@
                     // Etape 1 : vérifier si on est en train d'afficher ou de traiter le formulaire
                     // si on recoit un champs email rempli il y a une chance que ce soit un traitement
                     
-                    include 'debug.php';
-
                     $enCoursDeTraitement = isset($_POST['email']);
                     if ($enCoursDeTraitement)
                     {
@@ -37,23 +43,18 @@
                         $new_email = $_POST['email'];
                         $new_alias = $_POST['alias'];
                         $new_passwd = $_POST['password'];
-
-
-                        //Etape 3 : Ouvrir une connexion avec la base de donnée.
-
-                        include 'connexions2.php';
                         
-                        //Etape 4 : Petite sécurité
+                        //Etape 3 : Petite sécurité
                         // pour éviter les injection sql : https://www.w3schools.com/sql/sql_injection.asp
                         $new_email = $mysqli->real_escape_string($new_email);
                         $new_alias = $mysqli->real_escape_string($new_alias);
                         $new_passwd = $mysqli->real_escape_string($new_passwd);
                         // on crypte le mot de passe pour éviter d'exposer notre utilisatrice en cas d'intrusion dans nos systèmes
                         $new_passwd = hash('sha256', $new_passwd);
-                        //Etape 5 : construction de la requete
+                        //Etape 4 : construction de la requete
                         $lInstructionSql = "INSERT INTO users (id, email, password, alias) 
                         VALUES (NULL, '$new_email', '$new_passwd', '$new_alias')";
-                        // Etape 6: exécution de la requete
+                        // Etape 5: exécution de la requete
                         $ok = $mysqli->query($lInstructionSql);
                         if ( ! $ok)
                         {

@@ -1,3 +1,11 @@
+<?php
+    //On démarre une nouvelle session
+    session_start();
+
+    // Connexions à la base de données et à l'id de l'utilisateur
+    include 'connexions.php'
+?>
+
 <!doctype html>
 <html lang="fr">
     <head>
@@ -19,17 +27,11 @@
              */
             $tagId = intval($_GET['tag_id']);
             ?>
-            <?php
-            /**
-             * Etape 2: se connecter à la base de donnée
-             */
-            include 'connexions2.php';
-            ?>
 
             <aside>
                 <?php
                 /**
-                 * Etape 3: récupérer le nom du mot-clé
+                 * Etape 2: récupérer le nom du mot-clé
                  */
                 $laQuestionEnSql = "SELECT * FROM tags WHERE id= '$tagId' ";
                 $lesInformations = $mysqli->query($laQuestionEnSql);

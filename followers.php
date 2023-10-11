@@ -1,12 +1,9 @@
 <?php
     //On démarre une nouvelle session
     session_start();
-    //connexion à la BDD
-    include 'connexions2.php';
-    
-    if (isset($_SESSION['user_id'])) {
-        $connectedUserId = $_SESSION['user_id'];
-    }
+
+    // Connexions à la base de données et à l'id de l'utilisateur
+    include 'connexions.php'
 ?>
 
 <!doctype html>
@@ -34,9 +31,7 @@
                 <?php
                 // Etape 1: récupérer l'id de l'utilisateur
                 $userId = intval($_GET['user_id']);
-                // Etape 2: se connecter à la base de donnée
-                include 'connexions2.php';
-                // Etape 3: récupérer le nom de l'utilisateur
+                // Etape 2: récupérer le nom de l'utilisateur
                 $laQuestionEnSql = "
                     SELECT users.*
                     FROM followers
@@ -45,7 +40,7 @@
                     GROUP BY users.id
                     ";
                 $lesInformations = $mysqli->query($laQuestionEnSql);
-                // Etape 4: à vous de jouer
+                // Etape 3: à vous de jouer
                 //@todo: faire la boucle while de parcours des abonnés et mettre les bonnes valeurs ci dessous 
                 ?>
                 <?php

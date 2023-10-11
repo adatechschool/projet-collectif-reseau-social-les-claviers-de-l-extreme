@@ -1,9 +1,11 @@
 <?php
+    //On démarre une nouvelle session
     session_start();
+
+    // Connexions à la base de données et à l'id de l'utilisateur
+    include 'connexions.php'
 ?>
-<?php
-    include 'connexions2.php';
-?>
+
 <!doctype html>
 <html lang="fr">
     <head>

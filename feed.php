@@ -1,12 +1,9 @@
 <?php
     //On démarre une nouvelle session
     session_start();
-    //connexion à la BDD
-    include 'connexions2.php';
     
-    if (isset($_SESSION['user_id'])) {
-        $connectedUserId = $_SESSION['user_id'];
-    }
+    // Connexions à la base de données et à l'id de l'utilisateur
+    include 'connexions.php'
 ?>
 
 <!doctype html>
@@ -30,12 +27,6 @@
              * Etape 1: Le mur concerne un utilisateur en particulier
              */
             $userId = intval($_GET['user_id']);
-            ?>
-            <?php
-            /**
-             * Etape 2: se connecter à la base de donnée
-             */
-            include 'connexions2.php';
             ?>
 
             <aside>

@@ -1,3 +1,11 @@
+<?php
+    //On démarre une nouvelle session
+    session_start();
+
+    // Connexions à la base de données et à l'id de l'utilisateur
+    include 'connexions.php'
+?>
+
 <!doctype html>
 <html lang="fr">
     <head>
@@ -48,12 +56,7 @@
                   // plus généralement : https://www.php.net/manual/fr/mysqli.query.php
                  */
 
-                // Etape 1: Ouvrir une connexion avec la base de donnée.
-
-                // $result = $mysqli->query("SELECT * FROM `posts`", MYSQLI_USE_RESULT);
-
-                include 'connexions2.php';
-                //verification
+                // Etape 1: verification de la connexion à la base de données
                 if ($mysqli->connect_errno)
                 {
                     echo "<article>";
