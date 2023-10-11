@@ -79,6 +79,7 @@
                         <dd><?php echo($user['totalgiven']) ?></dd>
                         <dt>Nombre de "J'aime" reçus</dt>
                         <dd><?php echo($user['totalrecieved']) ?></dd>
+                        <dd><?php include 'button.php'?></dd>
                     </dl>
 
                 </article>
