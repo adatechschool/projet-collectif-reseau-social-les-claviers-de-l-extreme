@@ -75,7 +75,8 @@
                     ?>
                     <article>
                         <h3><?php echo $users['alias'] ?></h3>
-                        <p><?php echo $users['id'] ?></p>
+                        <br>
+                        <p>Mail : <?php echo $users['email'] ?></p>
                         <nav>
                             <a href="wall.php?user_id=<?php echo $users['id'] ?>">Mur</a>
                             | <a href="feed.php?user_id=<?php echo $users['id'] ?>">Flux</a>
