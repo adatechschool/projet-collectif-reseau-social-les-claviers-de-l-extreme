@@ -83,6 +83,7 @@ body>header #user:hover ul{
     border-radius: 1em;    
 }
 #wrapper aside img{
+    border-radius: 15%;
     display: block;
     width:50%;
     margin:auto;
