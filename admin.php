@@ -1,3 +1,11 @@
+<?php
+    //On démarre une nouvelle session
+    session_start();
+    
+    // Connexions à la base de données et à l'id de l'utilisateur
+    include 'connexions.php'
+?>
+
 <!doctype html>
 <html lang="fr">
     <head>
@@ -9,7 +17,6 @@
     <body>
         
     <?php include 'navbar.php'?>
-    <?php include 'connexions1.php'?>
 
         <div id="wrapper" class='admin'>
             <aside>

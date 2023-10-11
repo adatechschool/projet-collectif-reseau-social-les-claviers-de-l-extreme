@@ -1,12 +1,9 @@
 <?php
     //On démarre une nouvelle session
     session_start();
-    //connexion à la BDD
-    include 'connexions2.php';
-    
-    if (isset($_SESSION['user_id'])) {
-        $connectedUserId = $_SESSION['user_id'];
-    }
+
+    // Connexions à la base de données et à l'id de l'utilisateur
+    include 'connexions.php'
 ?>
 
 <!doctype html>
@@ -43,11 +40,7 @@
                 $userId = intval($_GET['user_id']);
 
                 /**
-                 * Etape 2: se connecter à la base de donnée
-                 */
-                include 'connexions2.php';
-                /**
-                 * Etape 3: récupérer le nom de l'utilisateur
+                 * Etape 2: récupérer le nom de l'utilisateur
                  */
                 $laQuestionEnSql = "
                     SELECT users.*, 
@@ -69,7 +62,7 @@
                 $user = $lesInformations->fetch_assoc();
 
                 /**
-                 * Etape 4: à vous de jouer
+                 * Etape 3: à vous de jouer
                  */
                 //@todo: afficher le résultat de la ligne ci dessous, remplacer les valeurs ci-après puiseffacer la ligne ci-dessous
                 ?>                
@@ -86,6 +79,7 @@
                         <dd><?php echo($user['totalgiven']) ?></dd>
                         <dt>Nombre de "J'aime" reçus</dt>
                         <dd><?php echo($user['totalrecieved']) ?></dd>
+                        <dd><?php include 'button.php'?></dd>
                     </dl>
 
                 </article>

@@ -1,3 +1,11 @@
+<?php
+    //On démarre une nouvelle session
+    session_start();
+
+    // Connexions à la base de données et à l'id de l'utilisateur
+    include 'connexions.php'
+?>
+
 <!doctype html>
 <html lang="fr">
     <head>
@@ -18,12 +26,6 @@
              * ... mais en résumé c'est une manière de passer des informations à la page en ajoutant des choses dans l'url
              */
             $userId =intval($_GET['user_id']);
-            ?>
-            <?php
-            /**
-             * Etape 2: se connecter à la base de donnée
-             */
-            include 'connexions2.php';
             ?>
 
             <aside>
