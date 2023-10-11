@@ -5,17 +5,8 @@
 <!doctype html>
 <html lang="fr">
 <header>
-    <?php
+                <?php
         
-    if ($_SESSION['user_id']== null) {
-    ?>
-        <nav id="menu">
-            <a href="news.php">Actualités</a>
-            <a href="login.php">Connexion</a>
-            <a href="registration.php">Inscription</a>
-        </nav>
-    <?php
-        } else {
     ?>
             <img src="resoc.jpg" alt="Logo de notre réseau social"/>
             <nav id="menu">
@@ -33,6 +24,6 @@
                 </ul>
             </nav>
     <?php
-        };
+       
     ?>
 </header>
