@@ -13,26 +13,11 @@
         <title>ReSoC - Actualités</title> 
         <meta name="author" content="Julien Falconnet">
         <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+
     </head>
     <body>
-        <header>
-            <a href='admin.php'><img src="resoc.jpg" alt="Logo de notre réseau social"/></a>
-            <nav id="menu">
-                <a href="news.php">Actualités</a>
-                <a href="wall.php?user_id=5">Mur</a>
-                <a href="feed.php?user_id=5">Flux</a>
-                <a href="tags.php?tag_id=1">Mots-clés</a>
-            </nav>
-            <nav id="user">
-                <a href="#">▾ Profil</a>
-                <ul>
-                    <li><a href="settings.php?user_id=5">Paramètres</a></li>
-                    <li><a href="followers.php?user_id=5">Mes suiveurs</a></li>
-                    <li><a href="subscriptions.php?user_id=5">Mes abonnements</a></li>
-                    <li><a href="usurpedpost.php?user_id=5">Opération croissantage !</a></li>
-                </ul>
-            </nav>
-        </header>
+        <?php include 'navbar.php'?>
         <div id="wrapper">
             <aside>
                 <img src="user.jpg" alt="Portrait de l'utilisatrice"/>
@@ -116,7 +101,7 @@
                             <p><?php echo $post['content'] ?></p>
                         </div>
                         <footer>
-                            <small>♥ <?php echo $post['like_number'] ?> </small>
+                            <small><i class="fa-solid fa-thumbs-up"></i> <?php echo $post['like_number'] ?> </small>
                             <a href=""><?php echo $post['author_name'] ?></a>,
                         </footer>
                     </article>
