@@ -13,6 +13,8 @@
         <title>ReSoC - Actualités</title> 
         <meta name="author" content="Julien Falconnet">
         <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+
     </head>
     <body>
         <?php include 'navbar.php'?>
@@ -99,7 +101,7 @@
                             <p><?php echo $post['content'] ?></p>
                         </div>
                         <footer>
-                            <small>♥ <?php echo $post['like_number'] ?> </small>
+                            <small><i class="fa-solid fa-thumbs-up"></i> <?php echo $post['like_number'] ?> </small>
                             <a href=""><?php echo $post['author_name'] ?></a>,
                         </footer>
                     </article>
