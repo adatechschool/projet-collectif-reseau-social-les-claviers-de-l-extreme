@@ -1,7 +1,7 @@
 <!-- Ajoutez le formulaire de suppression de compte ici -->
 <form action="" method="post">
     <input type="hidden" name="datadelet" value="<?= $user['id']; ?>">
-    <button type="submit" name="formdeleteuser">Supprimer le compte</button>
+    <button id="delbutton" type="submit" name="formdeleteuser">Supprimer le compte</button>
 </form>
 
 

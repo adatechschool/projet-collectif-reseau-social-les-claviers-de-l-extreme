@@ -18,6 +18,7 @@ body>header{
 }
 body>header img{
     height:5em;
+    border-radius: 1em;
 }
 body>header #menu {
     display:flex;
@@ -81,11 +82,13 @@ body>header #user:hover ul{
     flex:1;
     padding:1em;
     border-radius: 1em;    
+
 }
 #wrapper aside img{
     display: block;
     width:50%;
     margin:auto;
+    border-radius: 1em;
 }
 
 #wrapper main{
@@ -153,6 +156,7 @@ body>header #user:hover ul{
 .contacts article img{
     float:right;
     height: 5em;
+    border-radius: 1em;
 }
 
 pre{
@@ -162,3 +166,10 @@ pre{
 form dl dt{float:left;font-weight: bold;line-height: 1.5em;}
 form dl dd{margin-left:10em;line-height: 1.5em;margin-bottom: 1em}
 form dl dd textarea{width:40em;height: 15em;}
+
+#delbutton{
+    background: inherit;
+    background-color: #FDD8D0;
+    border-color: #E74C34;
+    border-radius: 0.5em;
+}

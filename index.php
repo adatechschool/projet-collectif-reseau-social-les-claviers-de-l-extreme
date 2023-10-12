@@ -21,7 +21,8 @@
 
             <aside>
                 <h2>Présentation</h2>
-                <p>Bienvenue sur notre réseau social.</p>
+                <p>Bienvenue chez les Dev'Laces !</p>
+                <img src="Images/logo.png" alt="logo The Dev'Laces">
             </aside>
             <main>
                 <article>
