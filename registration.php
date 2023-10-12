@@ -16,7 +16,7 @@
     </head>
     <body>
 
-        <div id="sideboard" >
+        <div id="wrapper" >
 
             <aside>
                 <h2>Présentation</h2>
