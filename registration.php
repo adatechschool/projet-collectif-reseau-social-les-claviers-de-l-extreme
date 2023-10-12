@@ -19,8 +19,7 @@
         <div id="wrapper" >
 
             <aside>
-                <h2>Présentation</h2>
-                <p>Bienvenue chez les Dev'Laces !</p>
+                <h2>The Dev'Laces, les liens du dev'</h2>
                 <img src="Images/logo.png" alt="logo The Dev'Laces">
             </aside>
             <main>
