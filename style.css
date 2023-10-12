@@ -92,6 +92,27 @@ body>header #user:hover ul{
     border-radius: 1em;
 }
 
+#sideboard{
+    display:flex;    
+    width:80em;
+    margin:0 auto 2em auto;
+}
+#sideboard aside{
+    background-color: #fcf3b2;
+    border: 5px solid #e74c34;
+    flex:1;
+    padding:1em;
+    border-radius: 1em;    
+
+}
+#sideboard aside img{
+    border-radius: 15%;
+    display: block;
+    width:100%;
+    margin:auto;
+    border-radius: 1em;
+}
+
 #wrapper main{
     flex:3;
     padding-left:1em;
@@ -173,4 +194,17 @@ form dl dd textarea{width:40em;height: 15em;}
     background-color: #FDD8D0;
     border-color: #E74C34;
     border-radius: 0.5em;
+    cursor: pointer;
+    transition: 0.2s;
+    position: relative;
+    margin-top: 2%;
+}
+
+#delbutton:hover {
+    background-color: #1abef5;
+    border-color: #1A5AF5;
+}
+
+#delbutton:active {
+    transform: translateY(5px)
 }
