@@ -30,6 +30,5 @@ Nous avons travaillés en mob-programing et en individuel pour certaines tâches
 
 - [PhP](https://www.php.net/)
 - [MySQL](https://www.mysql.com/)
--  [PhP](https://www.php.net/)
 - et un peu de CSS 
         
